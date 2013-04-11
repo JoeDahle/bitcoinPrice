@@ -1,11 +1,15 @@
 ###############################################################################
 # Get the current price of bitcoins
+#
+#
+# Additional Libraries needed
+# kivy v1.5.0 or greater- kivy.org
+# beautifulsoup4 -http://www.crummy.com/software/BeautifulSoup/
 ###############################################################################
 
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.label import Label
-#from kivy.uix.button import Button
 from bs4 import BeautifulSoup as bs
 from kivy.config import Config
 import urllib2
@@ -43,17 +47,3 @@ class BitcoinPrice(App):
 
 if __name__ == '__main__':
     BitcoinPrice().run()
-
-#try:
-    #mtgox = 'https://mtgox.com/'
-    #openPage = urllib2.urlopen(mtgox)
-    #page = openPage.read()
-    #openPage.close()
-    #soup = str(bs(page))
-    ##print soup
-    #lastPriceStartLoc = soup.find("price:<span>")
-    #lastPriceEndLoc = soup[lastPriceStartLoc:].find("</span>")
-    #print soup[lastPriceStartLoc + 12:lastPriceEndLoc + lastPriceStartLoc]
-
-#except Exception:
-    #print 'error'
